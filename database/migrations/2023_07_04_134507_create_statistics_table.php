@@ -15,7 +15,7 @@ class CreateStatisticsTable extends Migration
     {
         Schema::create('statistics', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('clicks');
+            $table->bigInteger('clicks')->default(0);
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('url_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
